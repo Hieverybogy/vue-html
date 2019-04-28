@@ -1,0 +1,341 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-pagination {
+  color: #999;
+}
+.zs-pagination:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.zs-pagination .zs-input__inner {
+  height: 38px;
+  width: 80px;
+}
+.zs-pagination .zs-button {
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0;
+  height: 38px;
+  width: 60px;
+}
+.zs-pagination .zs-button:hover {
+  background-color: #0696f5;
+  border-color: #0696f5;
+  color: #fff;
+}
+.zs-pagination__item {
+  float: left;
+  min-width: 38px;
+  height: 38px;
+  line-height: 38px;
+  margin-right: 10px;
+  text-align: center;
+  list-style: none;
+  user-select: none;
+  cursor: pointer;
+  font-family: Arial;
+  font-size: 16px;
+  border: 1px solid #dadada;
+  border-radius: 0px;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.zs-pagination__item a {
+  margin: 0 6px;
+  text-decoration: none;
+  color: #999;
+}
+.zs-pagination__item:hover {
+  border-color: #0696f5;
+  background-color: #0696f5;
+}
+.zs-pagination__item:hover a {
+  color: #fff;
+}
+.zs-pagination__item-active {
+  background-color: #0696f5;
+  border-color: #0696f5;
+}
+.zs-pagination__item-active a,
+.zs-pagination__item-active:hover a {
+  color: #fff;
+}
+.zs-pagination__item-jump-prev:after,
+.zs-pagination__item-jump-next:after {
+  content: "\E61A";
+  display: block;
+  letter-spacing: 1px;
+  color: #b8b9bb;
+  text-align: center;
+  font-size: 13px;
+}
+.zs-pagination__item-jump-prev i,
+.zs-pagination__item-jump-next i {
+  display: none;
+}
+.zs-pagination__item-jump-prev:hover:after,
+.zs-pagination__item-jump-next:hover:after {
+  display: none;
+}
+.zs-pagination__item-jump-prev:hover i,
+.zs-pagination__item-jump-next:hover i {
+  display: inline;
+}
+.zs-pagination__item-jump-prev:hover i:after {
+  content: "\E60E";
+}
+.zs-pagination__item-jump-next:hover i:after {
+  content: "\E60F";
+}
+.zs-pagination__prev {
+  margin-right: 8px;
+}
+.zs-pagination__item-jump-prev,
+.zs-pagination__item-jump-next {
+  margin-right: 4px;
+}
+.zs-pagination__prev,
+.zs-pagination__next,
+.zs-pagination__item-jump-prev,
+.zs-pagination__item-jump-next {
+  display: inline-block;
+  float: left;
+  margin-right: 10px;
+  min-width: 38px;
+  height: 38px;
+  line-height: 38px;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+  color: #666;
+  font-family: Arial;
+  border: 1px solid #dadada;
+  border-radius: 0px;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.zs-pagination__item-jump-prev,
+.zs-pagination__item-jump-next {
+  background: none;
+}
+.zs-pagination__prev a,
+.zs-pagination__next a {
+  color: #999;
+  font-size: 14px;
+}
+.zs-pagination__disabled {
+  cursor: not-allowed;
+  border-color: #eee;
+}
+.zs-pagination__disabled a {
+  color: #eee;
+}
+.zs-pagination__options {
+  float: left;
+  margin-left: 15px;
+}
+.zs-pagination__options-sizer {
+  float: left;
+  margin-right: 10px;
+}
+.zs-pagination__options-elevator {
+  float: left;
+  height: 38px;
+  line-height: 38px;
+  margin: 0 10px;
+}
+.zs-pagination__options-elevator span {
+  float: left;
+}
+.zs-pagination__options-elevator input {
+  float: left;
+  height: 38px;
+  padding: 4px 7px;
+  font-size: 12px;
+  border: 1px solid #dadada;
+  color: #434343;
+  background-color: #fff;
+  background-image: none;
+  position: relative;
+  cursor: text;
+  transition: border 0.2s ease-in-out, background 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  border-radius: 0px;
+  margin: 0 8px;
+  width: 50px;
+}
+.zs-pagination__options-elevator input:focus {
+  border: 1px solid #0696f5;
+  color: #0696f5;
+}
+.zs-pagination__total,
+.zs-pagination__sizer-text {
+  float: left;
+  height: 38px;
+  line-height: 38px;
+  margin-right: 10px;
+}
+.zs-pagination__sizer-text {
+  margin-left: 10px;
+  margin-right: 5px;
+}
+.zs-pagination__simple .zs-pagination__prev,
+.zs-pagination__simple .zs-pagination__next {
+  margin: 0;
+  border: 0;
+  height: 24px;
+  line-height: 24px;
+  font-size: 18px;
+  background: none;
+}
+.zs-pagination__simple .zs-pagination__simple-pager {
+  float: left;
+  margin-right: 8px;
+}
+.zs-pagination__simple .zs-pagination__simple-pager input {
+  width: 30px;
+  height: 24px;
+  margin: 0 8px;
+  padding: 5px 8px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #dadada;
+  border-radius: 0px;
+  transition: border-color 0.2s ease-in-out;
+}
+.zs-pagination__simple .zs-pagination__simple-pager span {
+  padding: 0 8px 0 2px;
+}
+.zs-pagination.mini .zs-pagination__item {
+  font-size: 14px;
+}
+.zs-pagination.mini .zs-pagination__sizer-text {
+  height: 34px;
+  line-height: 34px;
+}
+.zs-pagination.mini .zs-input__inner {
+  height: 34px;
+  padding-left: 5px;
+  width: 60px;
+}
+.zs-pagination.mini .zs-input__icon + .zs-input__inner {
+  padding-right: 22px;
+}
+.zs-pagination.mini .zs-button {
+  height: 34px;
+  width: 60px;
+}
+.zs-pagination.mini .zs-pagination__total {
+  height: 34px;
+  line-height: 34px;
+}
+.zs-pagination.mini .zs-pagination__item {
+  border: 0;
+  margin: 0;
+  min-width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border-radius: 1px;
+  background: none;
+}
+.zs-pagination.mini .zs-pagination__prev,
+.zs-pagination.mini .zs-pagination__next {
+  margin: 0;
+  min-width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border: 0;
+  background: none;
+}
+.zs-pagination.mini .zs-pagination__prev a i:after,
+.zs-pagination.mini .zs-pagination__next a i:after {
+  height: 34px;
+  line-height: 34px;
+}
+.zs-pagination.mini .zs-pagination__item-jump-prev,
+.zs-pagination.mini .zs-pagination__item-jump-next {
+  height: 34px;
+  line-height: 34px;
+  border: none;
+  margin-right: 0;
+}
+.zs-pagination.mini .zs-pagination__options {
+  margin-left: 8px;
+}
+.zs-pagination.mini .zs-pagination__options-elevator {
+  height: 34px;
+  line-height: 34px;
+}
+.zs-pagination.mini .zs-pagination__options-elevator input {
+  padding: 1px 7px;
+  height: 24px;
+  width: 44px;
+}
+.zs-pagination.mini .zs-pagination__item-active {
+  background-color: #0696f5;
+  border-color: #0696f5;
+}
+.zs-pagination.mini .zs-pagination__item-active a,
+.zs-pagination.mini .zs-pagination__item-active:hover a {
+  color: #fff;
+}

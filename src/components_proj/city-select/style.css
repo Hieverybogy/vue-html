@@ -1,0 +1,121 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.city-dialog .zs-dialog {
+  width: 34rem;
+  overflow: visible;
+}
+.zs-checkbox {
+  margin-left: 15px;
+}
+.province {
+  display: inline-block;
+  width: 32%;
+  position: relative;
+  height: 40px;
+  padding: 10px;
+}
+.province .add-sum {
+  position: absolute;
+  left: 0;
+  top: 58%;
+  transform: translateY(-50%);
+  color: #FF093A;
+  font-size: 0.48rem;
+}
+.province .add-city {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(45deg) translateY(-50%);
+  cursor: pointer;
+}
+.province .city-detail {
+  width: 16rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #dadada;
+  padding: 10px;
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.04);
+}
+.province .city-detail .zs-checkbox {
+  white-space: normal;
+  vertical-align: top;
+}
+.province .child-city {
+  width: 50%;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.province .close-city {
+  text-align: right;
+}
+.province .close-city i {
+  cursor: pointer;
+}
+.cho {
+  background: #dadada;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,29 @@
+{
+    "pages": [
+        {
+            "entry": "401",
+            "title": "权限不足",
+            "cdn": {}
+        },
+        {
+            "entry": "test",
+            "title": "组件模块",
+            "cdn": {}
+        },
+        {
+            "entry": "canvasCrop",
+            "title": "canvas截图",
+            "cdn": {}
+        },
+        {
+            "entry": "html2canvas",
+            "title": "html2canvas",
+            "cdn": {}
+        }
+    ],
+    "basePath": "./src/pages/",
+    "cdn": {
+        "js": [],
+        "css": []
+    }
+}

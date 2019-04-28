@@ -1,0 +1,64 @@
+@import '../../assets/css/src/var';
+
+.city-dialog{
+    .zs-dialog{
+        width: 34rem;
+        overflow: visible;
+    }
+}
+.zs-checkbox {
+    margin-left: 15px;
+}
+.province{
+    display: inline-block;
+    width: 32%;
+    position: relative;
+    height: 40px;
+    padding: 10px;
+    .add-sum{
+        position: absolute;
+        left: 0;
+        top: 58%;
+        transform: translateY(-50%);
+        color: @color-primary;
+        font-size: 0.48rem;
+    }
+    .add-city{
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-right: 2px solid @color-light-black;
+        border-bottom: 2px solid @color-light-black;
+        transform: rotate(45deg) translateY(-50%);
+        cursor: pointer;
+    }
+    .city-detail{
+        width: 16rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        border: 1px solid #dadada;
+        padding: 10px;
+        z-index: 10;
+        box-shadow: @box-shadow-aside;
+        .zs-checkbox{
+            white-space: normal;
+            vertical-align: top;
+        }
+    }
+    .child-city{
+        width: 50%;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .close-city{
+        text-align: right;
+        i{
+            cursor: pointer;
+        }
+    }
+}
+.cho{
+    background: #dadada;
+}

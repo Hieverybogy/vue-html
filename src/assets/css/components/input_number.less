@@ -1,0 +1,95 @@
+@import "../src/var.less";
+.zs {
+    &-input-number {
+        display: inline-block;
+        overflow: hidden;
+        width: 180px;
+        position: relative;
+
+        & .zs-input {
+            display: block;
+        }
+        & .zs-input__inner {
+            appearance: none;
+            padding-right: calc(@input-height * 2 + 10);
+        }
+        &__increase,
+        &__decrease {
+            height: auto;
+            border-left: @border-base;
+            width: @input-height;
+            line-height: calc(@input-height - 2);
+            top: 1px;
+            text-align: center;
+            color: @color-light-black;
+            cursor: pointer;
+            position: absolute;
+            z-index: 1;
+
+            &:hover {
+                color: @color-primary;
+
+                &:not(.is-disabled) ~ .zs-input .zs-input__inner:not(.is-disabled) {
+                    border-color: @input-focus-border;
+                }
+            }
+
+        &.is-disabled {
+            color: @disabled-border-base;
+            cursor: not-allowed;
+        }
+        }
+        &__increase {
+            right: 0;
+        }
+        &__decrease {
+            right: calc(@input-height + 1px);
+        }
+        &.is-isabled {
+            & .zs-input-number__increase, .zs-input-number__decrease {
+                border-color: @disabled-border-base;
+                color: @disabled-border-base;
+
+                &:hover {
+                    color: @disabled-border-base;
+                    cursor: not-allowed;
+                }
+            }
+        }
+        &__large {
+            width: 200px;
+
+            & .zs-input-number__increase, .zs-input-number__decrease {
+                line-height: @input-large-height;
+                width: @input-large-height;
+                font-size: @input-large-font-size;
+            }
+            & .zs-input-number__decrease {
+                right: calc(@input-large-height + 1px);
+            }
+            & .zs-input__inner {
+                padding-right: calc(@input-large-height * 2 + 10);
+            }
+        }
+        &__small {
+            width: 130px;
+
+            & .zs-input-number__increase, .zs-input-number__decrease {
+                line-height: @input-small-height;
+                width: @input-small-height;
+                font-size: @input-small-font-size;
+            }
+            & .zs-input-number__decrease {
+                right: calc(@input-small-height + 1px);
+            }
+            & .zs-input__inner {
+                padding-right: calc(@input-small-height * 2 + 10);
+            }
+        }
+        &.is-without-controls {
+            & .zs-input__inner {
+                padding-right: 10px;
+            }
+        }
+    }
+}

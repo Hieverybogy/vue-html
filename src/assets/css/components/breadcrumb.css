@@ -1,0 +1,98 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-breadcrumb {
+  font-size: 14px;
+  color: #999;
+  height: 50px;
+  line-height: 50px;
+  zoom: 1;
+}
+.zs-breadcrumb:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.zs-breadcrumb__separator {
+  margin: 0 6px 0 2px;
+}
+.zs-breadcrumb .zs-icon-arrow-right {
+  font-size: 12px;
+}
+.zs-breadcrumb__item {
+  float: left;
+}
+.zs-breadcrumb__item-inner,
+.zs-breadcrumb__item-inner a {
+  transition: color .15s linear;
+  cursor: pointer;
+}
+.zs-breadcrumb__item:last-child {
+  color: #434343;
+}
+.zs-breadcrumb__item:last-child .zs-breadcrumb__item__inner,
+.zs-breadcrumb__item:last-child .zs-breadcrumb__item__inner a,
+.zs-breadcrumb__item:last-child .zs-breadcrumb__item__inner:hover,
+.zs-breadcrumb__item:last-child .zs-breadcrumb__item__inner a:hover {
+  cursor: text;
+}
+.zs-breadcrumb__item:last-child .zs-breadcrumb__separator {
+  display: none;
+}

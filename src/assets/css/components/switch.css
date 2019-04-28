@@ -1,0 +1,155 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-switch {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  line-height: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+.zs-switch.is-disabled .zs-switch__core,
+.zs-switch.is-disabled .zs-switch__label {
+  cursor: not-allowed;
+}
+.zs-switch__label {
+  transition: .2s;
+  position: absolute;
+  z-index: 10;
+  width: 46px;
+  height: 22px;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+.zs-switch__label-left i {
+  left: 6px;
+}
+.zs-switch__label-right i {
+  right: 6px;
+}
+.zs-switch__label * {
+  line-height: 1;
+  top: 4px;
+  position: absolute;
+  font-size: 14px;
+  display: inline-block;
+  color: #fff;
+}
+.zs-switch__input {
+  display: none;
+}
+.zs-switch__input:checked + .zs-switch__core {
+  border-color: #0696f5;
+  background-color: #0696f5;
+}
+.zs-switch__core {
+  margin: 0;
+  display: inline-block;
+  position: relative;
+  width: 46px;
+  height: 22px;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+.zs-switch__core .zs-switch__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  transition: transform .3s;
+  width: 16px;
+  height: 16px;
+  z-index: 20;
+  background-color: #fff;
+}
+.zs-switch.is-disabled .zs-switch__core {
+  border-color: #eee !important;
+  background: #eee !important;
+}
+.zs-switch.is-disabled .zs-switch__core span {
+  background-color: #fefefe !important;
+}
+.zs-switch.is-disabled .zs-switch__core ~ .zs-switch__label * {
+  color: #fefefe !important;
+}
+.zs-switch.is-disabled .zs-switch__input:checked + .zs-switch__core {
+  border-color: #eee;
+  background-color: #eee;
+}
+.zs-switch__wide .zs-switch__label.zs-switch__label-left span {
+  left: 10px;
+}
+.zs-switch__wide .zs-switch__label.zs-switch__label-right span {
+  right: 10px;
+}
+.zs-switch .label-fade-enter,
+.zs-switch .label-fade-leave-active {
+  opacity: 0;
+}

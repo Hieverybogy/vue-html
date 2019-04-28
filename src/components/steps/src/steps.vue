@@ -1,0 +1,51 @@
+<template>
+    <div
+            class="zs-steps"
+            :class="['is-' + direction, center ? 'is-center' : '']">
+        <slot></slot>
+    </div>
+</template>
+
+<script>
+    export default {
+        name : 'ZsSteps',
+
+        props : {
+            space : [Number, String],
+            active : Number,
+            direction : {
+                type : String,
+                default : 'horizontal'
+            },
+            alignCenter : Boolean,
+            center : Boolean,
+            finishStatus : {
+                type : String,
+                default : 'finish'
+            },
+            processStatus : {
+                type : String,
+                default : 'process'
+            }
+        },
+
+        data() {
+            return {
+                steps : [],
+                stepOffset : 4
+            };
+        },
+
+        watch : {
+            active(newVal, oldVal) {
+                this.$emit('change', newVal, oldVal);
+            },
+
+            steps(steps) {
+                steps.forEach((child, index) =>{
+                    child.index = index;
+                });
+            }
+        }
+    };
+</script>

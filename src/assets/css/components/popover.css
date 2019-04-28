@@ -1,0 +1,158 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-popover {
+  position: absolute;
+  background: #fff;
+  min-width: 150px;
+  border-radius: 2px;
+  border: 1px solid #eee;
+  padding: 10px;
+  z-index: 2000;
+  font-size: 12px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12), 0px 0px 6px 0px rgba(0, 0, 0, 0.04);
+}
+.zs-popover .popper__arrow,
+.zs-popover .popper__arrow::after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.zs-popover .popper__arrow {
+  border-width: 6px;
+}
+.zs-popover .popper__arrow::after {
+  content: " ";
+  border-width: 6px;
+}
+.zs-popover[x-placement^="top"] {
+  margin-bottom: calc(12px);
+}
+.zs-popover[x-placement^="top"] .popper__arrow {
+  bottom: 6px;
+  left: 50%;
+  margin-right: calc(3px);
+  border-top-color: #eee;
+  border-bottom-width: 0;
+}
+.zs-popover[x-placement^="top"] .popper__arrow::after {
+  bottom: 1px;
+  margin-left: 6px;
+  border-top-color: #fff;
+  border-bottom-width: 0;
+}
+.zs-popover[x-placement^="bottom"] {
+  margin-top: calc(12px);
+}
+.zs-popover[x-placement^="bottom"] .popper__arrow {
+  top: -6px;
+  left: 50%;
+  margin-right: calc(3px);
+  border-top-width: 0;
+  border-bottom-color: #eee;
+}
+.zs-popover[x-placement^="bottom"] .popper__arrow::after {
+  top: 1px;
+  margin-left: -6px;
+  border-top-width: 0;
+  border-bottom-color: #fff;
+}
+.zs-popover[x-placement^="right"] {
+  margin-left: calc(12px);
+}
+.zs-popover[x-placement^="right"] .popper__arrow {
+  top: 50%;
+  left: -6px;
+  margin-bottom: calc(3px);
+  border-right-color: #eee;
+  border-left-width: 0;
+}
+.zs-popover[x-placement^="right"] .popper__arrow::after {
+  bottom: -6px;
+  left: 1px;
+  border-right-color: #fff;
+  border-left-width: 0;
+}
+.zs-popover[x-placement^="left"] {
+  margin-right: calc(12px);
+}
+.zs-popover[x-placement^="left"] .popper__arrow {
+  top: 50%;
+  right: -6px;
+  margin-bottom: calc(3px);
+  border-right-width: 0;
+  border-left-color: #eee;
+}
+.zs-popover[x-placement^="left"] .popper__arrow::after {
+  right: 1px;
+  bottom: -6px;
+  margin-left: -6px;
+  border-right-width: 0;
+  border-left-color: #fff;
+}
+.zs-popover__title {
+  color: #434343;
+  font-size: 13px;
+  line-height: 1;
+  margin-bottom: 9px;
+}

@@ -1,0 +1,94 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-select-dropdown__item {
+  font-size: 14px;
+  padding: 8px 10px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #434343;
+  height: 36px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.zs-select-dropdown__item.is-disabled {
+  color: #eee;
+  cursor: not-allowed;
+}
+.zs-select-dropdown__item.is-disabled:hover {
+  background-color: #fff;
+}
+.zs-select-dropdown__item.hover {
+  color: #fff;
+  background-color: #0697f6;
+}
+.zs-select-dropdown__item.selected {
+  color: #fff;
+  background-color: #0696f5;
+}
+.zs-select-dropdown__item.selected.hover {
+  background-color: #0692ef;
+}
+.zs-select-dropdown__item span {
+  line-height: 1.5 !important;
+}

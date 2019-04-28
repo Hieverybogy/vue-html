@@ -1,0 +1,163 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-form-label__left .zs-form-item__label {
+  text-align: left;
+}
+.zs-form-label__top .zs-form-item__label {
+  float: none;
+  display: inline-block;
+  padding: 0 0 10px 0;
+}
+.zs-form__inline .zs-form-item {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: top;
+}
+.zs-form__inline .zs-form-item__label,
+.zs-form__inline .zs-form-item__content {
+  display: inline-block;
+  float: left;
+}
+.zs-form-item {
+  margin-bottom: 20px;
+  zoom: 1;
+}
+.zs-form-item:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.zs-form-item .zs-form-item {
+  margin-bottom: 0;
+}
+.zs-form-item .zs-form-item .zs-form-item__content {
+  margin-left: 0 !important;
+}
+.zs-form-item__label {
+  text-align: right;
+  vertical-align: middle;
+  float: left;
+  font-size: 14px;
+  color: #434343;
+  line-height: 1;
+  padding: 11px 30px 11px 0;
+  box-sizing: border-box;
+}
+.zs-form-item__content {
+  height: 36px;
+  line-height: 36px;
+  position: relative;
+  font-size: 14px;
+  zoom: 1;
+}
+.zs-form-item__content:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.zs-form-item__error {
+  color: #eb433a;
+  font-size: 12px;
+  line-height: 1;
+  padding-top: 4px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+.zs-form-item.is-required .zs-form-item__label:before {
+  content: '*';
+  color: #eb433a;
+  margin-right: 4px;
+}
+.zs-form-item.is-error .zs-input__inner,
+.zs-form-item.is-error .zs-textarea__inner {
+  border-color: #eb433a;
+  color: #eb433a;
+}
+.zs-form-item.is-error .zs-input__inner::placeholder,
+.zs-form-item.is-error .zs-textarea__inner::placeholder {
+  color: #eb433a;
+}
+.zs-form-item.is-error .zs-input__inner:focus,
+.zs-form-item.is-error .zs-textarea__inner:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+.zs-form-item.is-error .un-validate .zs-input__inner,
+.zs-form-item.is-error .un-validate .zs-textarea__inner {
+  border-color: #dadada;
+}
+.zs-form-item.is-error .un-validate .zs-input__inner::placeholder,
+.zs-form-item.is-error .un-validate .zs-textarea__inner::placeholder {
+  color: #999;
+}
+.zs-form-item.is-error .un-validate .zs-input__inner:focus,
+.zs-form-item.is-error .un-validate .zs-textarea__inner:focus {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+}
+.zs-form-item.is-error .un-validate .zs-input__icon {
+  color: #b8b9bb;
+}
+.zs-form-item.is-error .zs-input__icon {
+  color: #eb433a;
+}
+.zs-form-item.is-error .zs-input__inner:focus {
+  box-shadow: 0 2px 4px rgba(235, 67, 58, 0.12), 0 0 6px rgba(235, 67, 58, 0.12);
+}

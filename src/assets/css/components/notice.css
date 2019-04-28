@@ -1,0 +1,128 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-notice {
+  width: 330px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 0px;
+  position: fixed;
+  right: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+  transition: opacity 0.3s, transform .3s, right .3s, top 0.4s;
+  overflow: hidden;
+}
+.zs-notice__group {
+  margin-left: 0;
+}
+.zs-notice__group.is-with-icon {
+  margin-left: 55px;
+}
+.zs-notice__title {
+  font-weight: normal;
+  font-size: 16px;
+  color: #434343;
+  margin: 0;
+}
+.zs-notice__content {
+  font-size: 14px;
+  line-height: 21px;
+  margin: 10px 0 0 0;
+  color: #0696f5;
+  text-align: justify;
+}
+.zs-notice__icon {
+  size: 40px;
+  font-size: 40px;
+  float: left;
+  position: relative;
+  top: 3px;
+}
+.zs-notice__closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: #434343;
+  font-size: 14px;
+}
+.zs-notice__closeBtn:hover {
+  color: #434343;
+}
+.zs-notice .el-icon-circle-check {
+  color: #1bc91a;
+}
+.zs-notice .el-icon-circle-cross {
+  color: #eb433a;
+}
+.zs-notice .el-icon-information {
+  color: #50bfff;
+}
+.zs-notice .el-icon-warning {
+  color: #fe931f;
+}
+.zs-notice-fade-enter {
+  transform: translateX(100%);
+  right: 0;
+}
+.zs-notice-fade-leave-active {
+  opacity: 0;
+}

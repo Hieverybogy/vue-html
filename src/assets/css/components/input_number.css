@@ -1,0 +1,148 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-input-number {
+  display: inline-block;
+  overflow: hidden;
+  width: 180px;
+  position: relative;
+}
+.zs-input-number .zs-input {
+  display: block;
+}
+.zs-input-number .zs-input__inner {
+  appearance: none;
+  padding-right: calc(82px);
+}
+.zs-input-number__increase,
+.zs-input-number__decrease {
+  height: auto;
+  border-left: 1px solid #dadada;
+  width: 36px;
+  line-height: calc(34px);
+  top: 1px;
+  text-align: center;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+.zs-input-number__increase:hover,
+.zs-input-number__decrease:hover {
+  color: #0696f5;
+}
+.zs-input-number__increase:hover:not(.is-disabled) ~ .zs-input .zs-input__inner:not(.is-disabled),
+.zs-input-number__decrease:hover:not(.is-disabled) ~ .zs-input .zs-input__inner:not(.is-disabled) {
+  border-color: #0696f5;
+}
+.zs-input-number__increase.is-disabled,
+.zs-input-number__decrease.is-disabled {
+  color: #eee;
+  cursor: not-allowed;
+}
+.zs-input-number__increase {
+  right: 0;
+}
+.zs-input-number__decrease {
+  right: calc(37px);
+}
+.zs-input-number.is-isabled .zs-input-number__increase,
+.zs-input-number.is-isabled .zs-input-number__decrease {
+  border-color: #eee;
+  color: #eee;
+}
+.zs-input-number.is-isabled .zs-input-number__increase:hover,
+.zs-input-number.is-isabled .zs-input-number__decrease:hover {
+  color: #eee;
+  cursor: not-allowed;
+}
+.zs-input-number__large {
+  width: 200px;
+}
+.zs-input-number__large .zs-input-number__increase,
+.zs-input-number__large .zs-input-number__decrease {
+  line-height: 42px;
+  width: 42px;
+  font-size: 16px;
+}
+.zs-input-number__large .zs-input-number__decrease {
+  right: calc(43px);
+}
+.zs-input-number__large .zs-input__inner {
+  padding-right: calc(94px);
+}
+.zs-input-number__small {
+  width: 130px;
+}
+.zs-input-number__small .zs-input-number__increase,
+.zs-input-number__small .zs-input-number__decrease {
+  line-height: 30px;
+  width: 30px;
+  font-size: 13px;
+}
+.zs-input-number__small .zs-input-number__decrease {
+  right: calc(31px);
+}
+.zs-input-number__small .zs-input__inner {
+  padding-right: calc(70px);
+}
+.zs-input-number.is-without-controls .zs-input__inner {
+  padding-right: 10px;
+}

@@ -1,0 +1,154 @@
+@import "../src/var";
+@import "../src/popup";
+@import "../components/button";
+
+.zs {
+    &-message-box__wrapper {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        &::after {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 0;
+            vertical-align: middle;
+        }
+        .zs-button {
+            float: left;
+            width: 45%;
+            height: 1.88rem;
+        }
+        .zs-button:last-child {
+            float: right;
+            margin-left: 20px;
+        }
+    }
+    &-message-box {
+        text-align: left;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: @color-white;
+        width: @msgbox-width;
+        border-radius: @msgbox-border-radius;
+        font-size: @msgbox-font-size;
+        overflow: hidden;
+        backface-visibility: hidden;
+
+        &__header {
+            position: relative;
+            padding: 10px 30px;
+            background-color: @color-white;
+            min-height: 40px;
+        }
+
+        &__content {
+            padding: 30px 40px;
+            color: @msgbox-content-color;
+            font-size: @msgbox-content-font-size;
+            position: relative;
+            text-align: center;
+        }
+        &__close {
+            display: inline-block;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: @color-light-black;
+            cursor: pointer;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+
+            //&:hover {
+            //    color: @color-primary;
+            //}
+        }
+        &__title {
+            padding-left: 0;
+            font-size: 18px;
+            font-weight: bold;
+            //font-weight: bold;
+            //height: 18px;
+            line-height: 40px;
+            color: @color-base-light-black;
+        }
+        &__message {
+            margin: 0 !important;
+
+            & p {
+                margin: 0;
+                line-height: 1.4;
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+        &__btns {
+            padding: 20px 120px 40px;
+            text-align: right;
+            overflow: hidden;
+
+            & button:nth-child(2) {
+                margin-left: 10px;
+            }
+        }
+        &__btns-reverse {
+            flex-direction: row-reverse;
+        }
+        &__status {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 36px !important;
+
+            &.zs-icon-circle-check {
+                color: @msgbox-success-color;
+            }
+
+            &.zs-icon-information {
+                color: @msgbox-info-color;
+            }
+
+            &.zs-icon-warning {
+                color: @msgbox-warning-color;
+            }
+
+            &.zs-icon-circle-cross {
+                color: @msgbox-danger-color;
+            }
+        }
+    }
+}
+
+.msgbox-fade-enter-active {
+    animation: msgbox-fade-in .3s;
+}
+
+.msgbox-fade-leave-active {
+    animation: msgbox-fade-out .3s;
+}
+
+@keyframes msgbox-fade-in {
+    0% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes msgbox-fade-out {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, -20px, 0);
+        opacity: 0;
+    }
+}

@@ -1,0 +1,230 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-steps {
+  font-size: 0;
+}
+.zs-steps.is-horizontal {
+  white-space: nowrap;
+}
+.zs-steps.is-horizontal.is-center {
+  text-align: center;
+}
+.zs-steps.is-vertical {
+  padding-top: 32px;
+}
+.zs-step {
+  position: relative;
+  vertical-align: top;
+}
+.zs-step.is-horizontal {
+  display: inline-block;
+  margin-right: 4px;
+}
+.zs-step.is-vertical .zs-step__head,
+.zs-step.is-vertical .zs-step__main {
+  display: inline-block;
+}
+.zs-step.is-vertical .zs-step__main {
+  padding-left: 10px;
+}
+.zs-step__line {
+  display: inline-block;
+  position: absolute;
+  border-color: inherit;
+  background-color: #999;
+}
+.zs-step__line.is-icon.is-horizontal {
+  right: 4px;
+}
+.zs-step__line.is-horizontal {
+  top: 13px;
+  height: 2px;
+  left: 28px;
+  right: 0;
+}
+.zs-step__line.is-vertical {
+  width: 2px;
+  box-sizing: border-box;
+  top: 34px;
+  bottom: 4px;
+  left: 14px;
+}
+.zs-step__line.is-first {
+  height: 20px;
+  top: -24px;
+}
+.zs-step__line.is-first:before {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #0696f5;
+  border-radius: 50%;
+}
+.zs-step__line-inner {
+  display: block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: inherit;
+  width: 0;
+  height: 0;
+}
+.zs-step__icon {
+  display: block;
+  line-height: 26px;
+  font-size: 16px;
+}
+.zs-step__icon > * {
+  vertical-align: middle;
+}
+.zs-step__head {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  text-align: center;
+  line-height: 28px;
+  font-size: 28px;
+  vertical-align: top;
+}
+.zs-step__head.is-text {
+  font-size: 14px;
+}
+.zs-step__head.is-text.is-process {
+  color: #fff;
+  background-color: #999;
+}
+.zs-step__head.is-text.is-wait {
+  color: #fff;
+  background-color: #999;
+}
+.zs-step__head.is-text.is-finish {
+  color: #fff;
+  background-image: linear-gradient(#3163f2, #0b98f5);
+  background-color: #0696f5;
+}
+.zs-step__head.is-process {
+  border-color: #999;
+  color: #fff;
+  background-color: #999;
+}
+.zs-step__head.is-wait {
+  border-color: #999;
+  color: #fff;
+  background-color: #999;
+}
+.zs-step__head.is-success {
+  color: #1bc91a;
+  border-color: #1bc91a;
+}
+.zs-step__head.is-error {
+  color: #eb433a;
+  border-color: #eb433a;
+}
+.zs-step__head.is-finish {
+  border-color: #0696f5;
+  color: #fff;
+  background-image: linear-gradient(#3163f2, #0b98f5);
+  background-color: #0696f5;
+}
+.zs-step__main {
+  white-space: normal;
+  padding-right: 10px;
+  text-align: left;
+}
+.zs-step__title {
+  font-size: 14px;
+  line-height: 32px;
+  display: inline-block;
+}
+.zs-step__title.is-process {
+  font-weight: 700;
+  color: #999;
+}
+.zs-step__title.is-wait {
+  font-weight: normal;
+  color: #999;
+}
+.zs-step__title.is-success {
+  font-weight: 700;
+  color: #1bc91a;
+}
+.zs-step__title.is-error {
+  font-weight: 700;
+  color: #eb433a;
+}
+.zs-step__title.is-finish {
+  font-weight: 700;
+  color: #0696f5;
+}
+.zs-step__description.is-process {
+  color: #999;
+}
+.zs-step__description.is-wait {
+  color: #999;
+}
+.zs-step__description.is-success {
+  color: #1bc91a;
+}
+.zs-step__description.is-error {
+  color: #eb433a;
+}

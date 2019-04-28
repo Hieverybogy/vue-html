@@ -1,0 +1,128 @@
+/* Transition
+ -------------------------- */
+/* gradient
+ -------------------------- */
+/* Colors
+// -------------------------- */
+/* Link
+ -------------------------- */
+/* Border
+-------------------------- */
+/* Box-shadow
+-------------------------- */
+/* Fill
+-------------------------- */
+/* Font
+-------------------------- */
+/* z-index
+ -------------------------- */
+/* Disable base
+-------------------------- */
+/* Icon
+ -------------------------- */
+/* Checkbox
+-------------------------- */
+/* Radio
+-------------------------- */
+/* Select
+-------------------------- */
+/* Input
+-------------------------- */
+/* Button
+-------------------------- */
+/* Table
+-------------------------- */
+/* Pagination
+-------------------------- */
+/* Loading
+ --------------------------*/
+/* Notice
+ --------------------------*/
+/* Message Box
+ -------------------------- */
+/* Message
+-------------------------- */
+/* Dialog
+-------------------------- */
+/* Tag
+-------------------------- */
+/* Switch
+-------------------------- */
+/* Scrollbar
+--------------------------*/
+/* Popover
+-------------------------- */
+/* Tooltip
+  -------------------------- */
+/* Steps
+--------------------------*/
+/* clearfix
+--------------------------*/
+.zs-loading-mask {
+  position: absolute;
+  z-index: 10000;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  top: 0;
+  right: 1px;
+  bottom: 1px;
+  left: 0;
+}
+.zs-loading-mask.is-fullscreen {
+  position: fixed;
+  transition: opacity 0.3s;
+}
+.zs-loading-mask.is-fullscreen .zs-loading-spinner {
+  margin-top: calc(-25px);
+}
+.zs-loading-mask.is-fullscreen .zs-loading-spinner .circular {
+  width: 50px;
+  height: 50px;
+}
+.zs-loading-spinner {
+  top: 50%;
+  margin-top: calc(-21px);
+  width: 100%;
+  text-align: center;
+  position: absolute;
+}
+.zs-loading-spinner .zs-loading-text {
+  color: #0696f5;
+  margin: 3px 0;
+}
+.zs-loading-spinner .circular {
+  width: 42px;
+  height: 42px;
+  animation: loading-rotate 2s linear infinite;
+}
+.zs-loading-spinner .path {
+  animation: loading-dash 1.5s ease-in-out infinite;
+  stroke-dasharray: 90, 150;
+  stroke-dashoffset: 0;
+  stroke-width: 2;
+  stroke: #0696f5;
+  stroke-linecap: round;
+}
+.zs-loading-fade-enter,
+.zs-loading-fade-leave-active {
+  opacity: 0;
+}
+@keyframes loading-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -40px;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -120px;
+  }
+}

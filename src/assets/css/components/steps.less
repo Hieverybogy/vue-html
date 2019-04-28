@@ -1,0 +1,220 @@
+@import '../src/var';
+.zs {
+    &-steps {
+        font-size: 0;
+
+        > :last-child .zs-step__line {
+            //display: none;
+            //height: 30px;
+        }
+
+        &.is-horizontal {
+            white-space: nowrap;
+
+            &.is-center {
+                text-align: center;
+            }
+        }
+        &.is-vertical{
+            padding-top:32px;
+        }
+    }
+}
+.zs {
+    &-step {
+        position: relative;
+        vertical-align: top;
+
+        &.is-horizontal {
+            display: inline-block;
+            margin-right: 4px;
+        }
+        &.is-vertical {
+            & .zs-step__head,
+            & .zs-step__main {
+                display: inline-block;
+            }
+
+            & .zs-step__main {
+                padding-left: 10px;
+            }
+        }
+        &__line {
+            display: inline-block;
+            position: absolute;
+            border-color: inherit;
+            background-color: @steps-line-color;
+
+            &.is-icon {
+                &.is-horizontal {
+                    right: 4px;
+                }
+            }
+            &.is-horizontal {
+                top: 13px;
+                height: 2px;
+                left: 28px;
+                right: 0;
+            }
+            &.is-vertical {
+                width: 2px;
+                box-sizing: border-box;
+                top: 34px;
+                bottom: 4px;
+                left: 14px;
+            }
+            &.is-first {
+                height: 20px;
+                top: -24px;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    width: 8px;
+                    height: 8px;
+                    background: @color-primary;
+                    border-radius: 50%;
+
+                }
+            }
+        }
+        &__line-inner {
+            display: block;
+            border-width: 1px;
+            border-style: solid;
+            border-color: inherit;
+            //transition: all 150ms;
+            width: 0;
+            height: 0;
+        }
+        &__icon {
+            display: block;
+            line-height: 26px;
+            font-size:16px;
+            > * {
+                vertical-align: middle;
+            }
+        }
+        &__head {
+            width: @steps-circle-size;
+            height: @steps-circle-size;
+            border-radius: 50%;
+            background-color: transparent;
+            text-align: center;
+            line-height: 28px;
+            font-size: 28px;
+            vertical-align: top;
+            //transition: all 150ms;
+
+            &.is-text {
+                font-size: 14px;
+                //border-width: 3px;
+                //border-style: solid;
+
+                &.is-process {
+                    color: @color-white;
+                    background-color: @steps-line-color;
+                    //border-color: @steps-line-color;
+                }
+                &.is-wait {
+                    color: @color-white;
+                    background-color: @steps-line-color;
+                    //border-color: @steps-line-color;
+                }
+                //&.is-success {
+                //    color: @color-white;
+                //    background-color: @color-success;
+                //    border-color: @color-success;
+                //}
+                //&.is-error {
+                //    color: @color-white;
+                //    background-color: @color-danger;
+                //    border-color: @color-danger;
+                //}
+                &.is-finish {
+                    color: @color-white;
+                    background-image: @gradient-base;
+                    background-color: @color-primary;
+                    //border-color: @color-primary;
+                }
+            }
+            &.is-process {
+                border-color: @steps-line-color;
+                color: @color-white;
+                background-color: @steps-line-color;
+            }
+            &.is-wait {
+                border-color: @steps-line-color;
+                color: @color-white;
+                background-color: @steps-line-color;
+            }
+            &.is-success {
+                color: @color-success;
+                border-color: @color-success;
+            }
+            &.is-error {
+                color: @color-danger;
+                border-color: @color-danger;
+            }
+            &.is-finish {
+                //color: @color-primary;
+                border-color: @color-primary;
+                color: @color-white;
+                background-image: @gradient-base;
+                background-color: @color-primary;
+            }
+        }
+        &__main {
+            white-space: normal;
+            padding-right: 10px;
+            text-align: left;
+        }
+        &__title {
+            font-size: 14px;
+            line-height: 32px;
+            display: inline-block;
+
+            &.is-process {
+                font-weight: 700;
+                color: @steps-line-color;
+            }
+            &.is-wait {
+                font-weight: normal;
+                color: @steps-line-color;
+            }
+            &.is-success {
+                font-weight: 700;
+                color: @color-success;
+            }
+            &.is-error {
+                font-weight: 700;
+                color: @color-danger;
+            }
+            &.is-finish {
+                font-weight: 700;
+                color: @color-primary;
+            }
+        }
+        &__description {
+            //font-size: 12px;
+            //font-weight: normal;
+            //line-height: 14px;
+
+            &.is-process {
+                color: @steps-line-color;
+            }
+            &.is-wait {
+                color: @steps-line-color;
+            }
+            &.is-success {
+                color: @color-success;
+            }
+            &.is-error {
+                color: @color-danger;
+            }
+            &.is-finish {
+                //color: @color-primary ;
+            }
+        }
+    }
+}
