@@ -19,6 +19,11 @@
             "entry": "html2canvas",
             "title": "html2canvas",
             "cdn": {}
+        },
+        {
+            "entry": "vueDplayer",
+            "title": "vueDplayer",
+            "cdn": {}
         }
     ],
     "basePath": "./src/pages/",
