@@ -24,6 +24,11 @@
             "entry": "vueDplayer",
             "title": "vueDplayer",
             "cdn": {}
+        },
+        {
+            "entry": "upload",
+            "title": "upload",
+            "cdn": {}
         }
     ],
     "basePath": "./src/pages/",
