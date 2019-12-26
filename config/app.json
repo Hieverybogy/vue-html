@@ -29,6 +29,11 @@
             "entry": "upload",
             "title": "upload",
             "cdn": {}
+        },
+        {
+            "entry": "calendar",
+            "title": "calendar",
+            "cdn": {}
         }
     ],
     "basePath": "./src/pages/",

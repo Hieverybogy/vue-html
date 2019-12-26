@@ -142,7 +142,7 @@
                     }
                     if (this.options.length === 0) {
                         // return this.noDataText
-                        return this.$i18n.locale=='cn' ? '无数据' : 'empty'
+                        return '无数据'
                     }
                 }
                 return null;

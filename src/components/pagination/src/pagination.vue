@@ -25,8 +25,7 @@
     </ul>
     <ul :class="wrapClasses" v-else>
         <span :class="[prefixCls + '__total']" v-if="showTotal">
-            <slot v-if="$i18n.locale=='cn'">共 {{ total }} <template v-if="total <= 1">条</template><template v-else>条</template></slot>
-            <slot v-if="$i18n.locale=='en'">Total {{ total }} </slot>
+            <slot>共 {{ total }} <template v-if="total <= 1">条</template><template v-else>条</template></slot>
         </span>
         <!--title="上一页"-->
         <li

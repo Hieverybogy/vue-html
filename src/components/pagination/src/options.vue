@@ -10,17 +10,12 @@
                 </zs-option>
             </zs-select>
         </div>
-        <div v-if="showElevator  && $i18n.locale=='cn'" :class="ElevatorClasses">
+        <div v-if="showElevator" :class="ElevatorClasses">
             <span>第</span>
             <input type="text" v-model="inputPage" @keyup.enter="changePage">
             <span>页</span>
         </div>
-        <div v-if="showElevator  && $i18n.locale=='en'" :class="ElevatorClasses">
-            <span>To Page</span>
-            <input type="text" v-model="inputPage" @keyup.enter="changePage">
-        </div>
-        <zs-button v-if="showElevator && $i18n.locale=='cn'" type="primary" @click="changePage">确定</zs-button>
-        <zs-button v-if="showElevator && $i18n.locale=='en'" type="primary" @click="changePage">Go</zs-button>
+        <zs-button v-if="showElevator" type="primary" @click="changePage">确定</zs-button>
     </div>
 </template>
 <script>
