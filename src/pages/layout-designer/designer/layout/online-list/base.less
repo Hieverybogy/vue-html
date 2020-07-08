@@ -1,0 +1,136 @@
+// @import '@/static/css/sapi-variables.less';
+
+.list-edit-preview {
+    .sapi-list-filters-preview-wrap{
+        display: flex;
+
+        .el-form-item__label{
+            padding-left:15px;
+        }
+    }
+
+    .main-tight-filters > *{
+        padding:0;
+    }
+
+    .main-tight-filters > .tight-filter-arrow{
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+    .sapi-list-morefilters-fields-warp .draggable-type{
+        width:100%;
+    }
+
+    .sapi-list-morefilters-fields-warp .draggable-type,
+    .sapi-list-filters-preview-wrap .draggable-type {
+        position: relative;
+        list-style: none;
+        font-size: 0;
+        display: block;
+        text-align: center;
+        height:auto;
+        line-height: 40px;
+        background-color: #fff;
+        border: 1px dotted #ccc;
+        border-radius: 5px;
+        min-height:40px;
+        min-width: 200px;
+    
+        &::after {
+            content: '放置位置';
+            display: block;
+            background: #fff;
+            font-size: 16px;
+            color: #999;
+            z-index: 10;
+            position:absolute;
+            top:0;
+            left:50%;
+            width: 70px;
+            margin-left: -35px;
+        }
+    }
+
+    .form-content{
+        overflow: initial;
+    }
+
+    .form-collapses-item{
+        > .form-collapses-title{
+            margin-right:0;
+            margin-left: 0;
+        }
+
+        >.form-collapses-content {
+            padding-bottom: 15px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    .filter-vnode-empty{
+        position: relative;
+        list-style: none;
+        font-size: 0;
+        display: block;
+        min-width: 350px;
+        text-align: center;
+        height:auto;
+        line-height: 40px;
+        border-radius: 5px;
+        min-height: 40px;
+        background-color: #ececec;
+
+        &::after {
+            content: '筛选条件拖放区域';
+            display: block;
+            font-size: 16px;
+            color: #999;
+            z-index: 10;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -64px;
+        }
+    }
+
+    .sapi-list-filters-preview-wrap{
+        display:flex;
+
+        .draggable-type{
+            margin:0;
+        }
+        
+        .draggable-wrap{
+            min-height: 38px;
+        }
+
+        .el-form-item{
+            margin-bottom:0;
+        }
+    }
+
+    .sapi-list-filters-fields-warp{
+        display: flex; 
+        align-items: center;
+    }
+
+    .sapi-list-filters-fields-warp>*{
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .draggable-wrap{
+        min-height: auto;
+    }
+    
+    .main-filters{
+        padding: 20px;
+    }
+
+    .list-table-valid-success{
+        .el-form-item {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import '../../../static/css/sapi-variables.less';
+
+.form-engine-right{
+    .el-form{
+        padding: 0 5px;
+    }
+
+    .el-form-item__label{
+        line-height: 1.4em;
+        padding-bottom: 5px;
+    }
+
+    .el-collapse-item__content{
+        padding-bottom: 0px;
+    }
+
+    .el-tabs__header{
+        margin-bottom: 5px;
+    }
+
+    .el-radio, .el-checkbox{
+        display:block;
+    }
+
+    .el-radio + .el-radio{
+        margin-left:0;
+        padding-top: 5px;
+    }
+    .el-checkbox + .el-checkbox{
+        margin-left:0;
+    }
+
+    .sapi-code-icon{
+        float:right;
+        font-size: 14px;
+        line-height: 28px;
+        color: #404040;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .sapi-code-edited {
+        color: @--color-danger
+    }
+
+    .sapi-popover-tipinfo{
+        padding: 10px;
+        line-height:1.4em;
+        font-size: 13px;
+    }
+
+    .el-icon-info{
+        color: @--color-primary;
+    }
+}
+
+.page-component__scroll {
+    height:100%;
+    .el-scrollbar__wrap {
+        overflow-x: hidden;
+    }
+}
+
+.sapi-list-ueditor, .sapi-form-ueditor{
+    .engine-html{
+        background-color: @--body-background-color;
+        padding: 30px !important;
+    }
+}
+
+.sapi-preview-list-table.el-table{
+    .cell{
+        overflow:visible;
+    }
+}
+
+.sapi-form-ueditor {
+    .form-edit-preview{
+        background-color:#fff;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+    }
+
+    .form-content {
+        width: 100%;
+        padding-bottom: 20px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 0px;
+        margin-top:0;
+    }
+
+    &.form-engine .form-engine-middle .engine-html{
+        height: calc(100% - 95px);
+    }
+
+    .sapi-embed-box .footer{
+        box-shadow: 0px 0px 4px 0 #B2B2B2;
+    }
+}

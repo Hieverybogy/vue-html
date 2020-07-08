@@ -1,0 +1,137 @@
+.form-edit-preview {
+    .sapi-embed-content .draggable-type {
+        position: relative;
+        list-style: none;
+        font-size: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        height:auto;
+        line-height: 38px;
+        background-color: #fff;
+        border: 1px dotted #ccc;
+        border-radius: 5px;
+    
+        &::after {
+            content: '放置位置';
+            display: block;
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            margin-left: -32px;
+            top: 0;
+            line-height: 38px;
+            font-size: 16px;
+            color: #999;
+            z-index: 10;
+        }
+    }
+
+    .form-content{
+        overflow: initial;
+    }
+
+    .form-collapses-item{
+        >.form-collapses-content {
+            padding-bottom: 15px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        padding-bottom: 20px;
+    }
+
+    .vnode-empty{
+        background-image: url('./vnode_empty.png');
+        background-repeat: no-repeat;
+        background-position: center 50px;
+        min-height: 323px;
+        background-color:#eeeeee;
+        border-radius: 5px;
+    }
+
+    .collapses-item-empty{
+        position: relative;
+        background-color: #efefef;
+        border-radius: 5px;
+        text-align: center;
+        min-height: 100px;
+
+        &::after {
+            content: '折叠卡拖放区域，不支持嵌套折叠卡';
+            display: block;
+            position: absolute;
+            width:100%;
+            top: 30px;
+            line-height: 38px;
+            font-size: 16px;
+            color: #aaa;
+            z-index: 10;
+        }
+    }
+
+    .form-item-draggable-wrap{
+        margin-top: 25px;
+    }
+
+    .preview-form-double-columns{
+        .draggable-type, .draggable-wrap{
+            width:50%;
+            float:left;
+        }
+
+        .draggable-type{
+            margin:0;
+            margin-bottom:24px;
+        }
+
+        .draggable-wrap.form-item-fullline, .sapi-detial-draggable-wrap {
+            width: 100%;
+        }
+
+        .draggable-wrap.form-item-alone {
+            float: none;
+            clear: both;
+            width: 50%;
+        }
+
+        .type-collapseItem,
+        .collapses-outer-draggable-wrap{
+            width: 100%;
+            float:none;
+            clear: both;
+        }
+    }
+
+    .sapi-detial-draggable-wrap{
+        min-height: auto;
+    }
+
+    .el-table::before{
+        z-index: 4;
+    }
+
+    .el-table .cell{
+        overflow: visible;
+    }
+
+    .el-table .draggable-btns-wrap a {
+        color: #404040;
+        &:hover{
+            border-color: #458aff;
+            color: #458aff;
+        }        
+    }
+	.el-checkbox-group{
+    	font-size:12px;
+	}
+}
+
+.work-flow-layout .form-edit-preview {
+    .form-collapses-item{
+        > .form-collapses-title{
+            margin-right:0;
+            margin-left: 0;
+        }
+    }
+}

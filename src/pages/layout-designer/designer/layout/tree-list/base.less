@@ -1,0 +1,129 @@
+// @import '@/static/css/sapi-variables.less';
+
+.tree-list-edit-preview {
+    .sapi-list-filters-preview-wrap{
+        display: flex;
+
+        .el-form-item__label{
+            padding-left:15px;
+        }
+    }
+
+    .sapi-list-filters-preview-wrap .draggable-type {
+        position: relative;
+        list-style: none;
+        font-size: 0;
+        display: block;
+        width: 33.33%;
+        text-align: center;
+        height:auto;
+        line-height: 40px;
+        background-color: #fff;
+        border: 1px dotted #ccc;
+        border-radius: 5px;
+        min-height:40px;
+    
+        &::after {
+            content: '放置位置';
+            display: block;
+            background: #fff;
+            font-size: 16px;
+            color: #999;
+            z-index: 10;
+            position:absolute;
+            top:0;
+            left:50%;
+            margin-left: -50px;
+        }
+    }
+
+    .form-content{
+        overflow: initial;
+    }
+
+    .form-collapses-item{
+        > .form-collapses-title{
+            margin-right:0;
+            margin-left: 0;
+        }
+
+        >.form-collapses-content {
+            padding-bottom: 15px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+
+    .filter-vnode-empty{
+        position: relative;
+        list-style: none;
+        font-size: 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        height:auto;
+        line-height: 40px;
+        border-radius: 5px;
+        min-height: 40px;
+        background-color: #ececec;
+
+        &::after {
+            content: '筛选条件拖放区域';
+            display: block;
+            font-size: 16px;
+            color: #999;
+            z-index: 10;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            margin-left: -64px;
+        }
+    }
+
+    .sapi-list-filters-preview-wrap{
+        display:flex;
+
+        .draggable-type, .draggable-wrap{
+            width:33.33%;
+            float: left;
+        }
+
+        .draggable-type{
+            margin:0;
+        }
+        
+        .draggable-wrap{
+            min-height: 38px;
+        }
+
+        .el-form-item{
+            margin-bottom:0;
+        }
+    }
+
+    .sapi-list-filters-fields-warp{
+        width:100%;
+    }
+
+    .draggable-wrap{
+        min-height: auto;
+    }
+    
+    .main-filters{
+        padding: 20px;
+    }
+
+    .main-table{
+        // height: 100%;
+    }
+
+    .main-pager{
+        position: absolute;
+    }
+
+    .list-table-valid-success{
+        .el-form-item {
+            margin-bottom: 0;
+        }
+    }
+}
