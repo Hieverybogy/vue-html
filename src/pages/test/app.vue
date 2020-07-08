@@ -1,5 +1,9 @@
 <template>
     <div class="test">
+        <zs-button type="cancel" @click="$store.dispatch('addfn')">+</zs-button>
+        <zs-button type="cancel" @click="$store.dispatch('reductfn')">-</zs-button>
+        {{this.$store.state.count}}
+        {{this.$store.getters.getStateCount}}
         <zs-input type="text" placeholder="请输入"></zs-input>
         <br>
         <br>

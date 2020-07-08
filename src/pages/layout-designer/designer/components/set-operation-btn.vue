@@ -47,31 +47,69 @@
                             </el-option>
                         </el-select>
                     </sapi-form-item>
-                    <sapi-form-item label="自定义方法" v-if="false">
-                        <base-code-editor ref="customFun" class="custom-fun-code"
-                            :value="tempCustomBtn.customFun"
-                            :options="{
-                                minimap: {
-                                    enabled:false
-                                },
-                                wordWrap: 'on',
-                                lineNumbersMinChars: 2,
-                                lineDecorationsWidth: 2,
-                                overviewRulerBorder: false,
-                                scrollbar: {
-                                    horizontalHasArrows:false,
-                                    horizontal:'hidden',
-                                    vertical: 'hidden'
-                                }
-                            }"
-                            beautifier="js"
-                            language="javascript"></base-code-editor>
-                    </sapi-form-item>
                     <sapi-form-item v-if="tempCustomBtn.usage === 'custom'" label="立即执行" prop="execution">
                         <el-checkbox v-model="tempCustomBtn.execution"></el-checkbox>
                     </sapi-form-item>
                     <sapi-form-item v-if="tempCustomBtn.usage === 'custom'" label="点击事件参数" prop="clickEventArgs">
                         <el-input v-model="tempCustomBtn.clickEventArgs"></el-input>
+                    </sapi-form-item>
+
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog'"
+                        label="应用编号" prop="appCode">
+                        <el-input v-model="tempCustomBtn.appCode"></el-input>
+                    </sapi-form-item>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog'"
+                        label="关联表单id" prop="relateFormId">
+                        <el-input v-model="tempCustomBtn.relateFormId"></el-input>
+                    </sapi-form-item>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog'"
+                        label="表单模式mode" prop="relateFormMode">
+                        <el-select v-model="tempCustomBtn.relateFormMode" 
+                            placeholder="请选择">
+                            <el-option
+                                v-for="item in modeValueOptions"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </sapi-form-item>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog'"
+                        label="表单提交模式" prop="formSubmitType">
+                        <el-radio-group v-model="tempCustomBtn.formSubmitType">
+                            <el-radio  v-for="item in formSubmitTypes"
+                                :key="item.value" 
+                                :label="item.value">{{item.label}}</el-radio>
+                        </el-radio-group>
+                    </sapi-form-item>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog' && tempCustomBtn.relateFormMode !== 'Add'"
+                        label="表单主键" prop="keysParams" full label-width="auto">
+                        <sapi-param-setting 
+                            :target="tempCustomBtn.keysParams"
+                            :in-row="inRow"
+                            :in-list="inList"
+                            type="object">
+                        </sapi-param-setting>
+                    </sapi-form-item>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog'"
+                        label="弹窗option参数" prop="formOptions" full label-width="auto">
+                        <sapi-param-setting 
+                            :target="tempCustomBtn.formOptions"
+                            :in-row="inRow"
+                            :in-list="inList"
+                            type="object">
+                        </sapi-param-setting>
+                    </sapi-form-item>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openDialog'"
+                        label="表单回调方法" :prop="tempCustomBtn.relateFormMode === 'View' ? '' : 'formConfirm'">
+                        <el-select v-model="tempCustomBtn.formConfirm" placeholder="请选择">
+                            <el-option
+                                v-for="item in bindingMethods"
+                                :key="item.value"
+                                :label="item.label"
+                                :value="item.value">
+                            </el-option>
+                        </el-select>
                     </sapi-form-item>
                     
                     <sapi-form-item v-if="tempCustomBtn.usage === 'openPage'" label="打开地址" prop="openUrl">
@@ -83,57 +121,12 @@
                             <el-radio label="_blank">新标签</el-radio>
                         </el-radio-group>
                     </sapi-form-item>
-                    <sapi-form-item v-if="tempCustomBtn.usage === 'openPage'" full label-width="auto" label="打开地址参数" prop="params">
-                        <el-table class="common-table" :data="tempCustomBtn.openUrlParams">
-                            <el-table-column prop="paramId" label="参数id">
-                                <template slot-scope="scope">
-                                    <el-input v-model="scope.row.paramId"></el-input>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="paramType" label="参数类型">
-                                <template slot-scope="scope">
-                                    <el-select 
-                                        v-model="scope.row.paramType" placeholder="请选择">
-                                        <el-option
-                                            v-for="item in paramType"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="paramValueSource" label="参数值来源">
-                                <template slot-scope="scope">
-                                    <el-select 
-                                        v-model="scope.row.paramValueSource" placeholder="请选择">
-                                        <el-option
-                                            v-for="item in (inRow ? operParamValueSource : paramValueSource)"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="paramValue" label="关联参数值">
-                                <template slot-scope="scope">
-                                    <el-input v-model="scope.row.paramValue" ></el-input>
-                                </template>
-                            </el-table-column>
-                            <el-table-column key="operation"
-                                fixed="right" label="操作" width="60">
-                                <template slot-scope="scope">
-                                    <a @click="deleteParam('openUrlParams', scope.$index)" href="javascript:void(0)">删除</a>
-                                </template>
-                            </el-table-column>
-                        </el-table>
-                        <div class="common-table__bottom-btn">
-                            <span @click="addParam('openUrlParams')">
-                                <i class="el-icon-circle-plus"></i>
-                                新增
-                            </span>
-                        </div>
+                    <sapi-form-item v-if="tempCustomBtn.usage === 'openPage'" full label-width="auto" label="打开地址参数" prop="openUrlParams">
+                        <sapi-param-setting 
+                            :target="tempCustomBtn.openUrlParams"
+                            :in-row="inRow"
+                            :in-list="inList">
+                        </sapi-param-setting>
                     </sapi-form-item>
 
                     <sapi-form-item v-if="tempCustomBtn.usage === 'ajax'" label="api服务" prop="apiServer">
@@ -150,61 +143,12 @@
                         </el-radio-group>
                     </sapi-form-item>
                     <sapi-form-item v-if="tempCustomBtn.usage === 'ajax'" full label="api参数" prop="apiParams" label-width="auto">
-                        <el-table class="common-table" :data="tempCustomBtn.apiParams">
-                            <el-table-column prop="paramId" label="参数id">
-                                <template slot-scope="scope">
-                                    <div class="body-prop-param-wrap">
-                                        <span class="body-prop-prefix" v-if="scope.row.parentGuid">--</span>
-                                        <el-input v-model="scope.row.paramId">
-                                        </el-input>
-                                    </div>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="paramType" label="参数类型">
-                                <template slot-scope="scope">
-                                    <el-select 
-                                        v-model="scope.row.paramType" placeholder="请选择" @change="apiParamTypeChange(scope.row, scope.$index)">
-                                        <el-option
-                                            v-for="item in (scope.row.parentGuid ? [{label: 'body子属性', value: 'bodyProp'}]: (tempCustomBtn.apiType === 'get' ? paramType : requestParamType))"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="paramValueSource" label="参数值来源">
-                                <template slot-scope="scope">
-                                    <el-select 
-                                        v-model="scope.row.paramValueSource" placeholder="请选择" @change="apiParamValueSourceChange(scope.row, scope.$index)">
-                                        <el-option
-                                            v-for="item in getApiParamValueSource(scope.row)"
-                                            :key="item.value"
-                                            :label="item.label"
-                                            :value="item.value">
-                                        </el-option>
-                                    </el-select>
-                                </template>
-                            </el-table-column>
-                            <el-table-column prop="paramValue" label="关联参数值">
-                                <template slot-scope="scope">
-                                    <el-input v-if="scope.row.paramValueSource !== 'customObj'" v-model="scope.row.paramValue"></el-input>
-                                </template>
-                            </el-table-column>
-                            <el-table-column key="operation"
-                                fixed="right" label="操作" width="60">
-                                <template slot-scope="scope">
-                                    <a v-if="scope.row.paramValueSource === 'customObj'" @click="addObjectParam('apiParams', scope.$index, scope.row.guid)" href="javascript:void(0)">子属性</a>
-                                    <a @click="deleteParam('apiParams', scope.$index)" href="javascript:void(0)">删除</a>
-                                </template>
-                            </el-table-column>
-                        </el-table>
-                        <div class="common-table__bottom-btn">
-                            <span @click="addParam('apiParams')">
-                                <i class="el-icon-circle-plus"></i>
-                                新增
-                            </span>
-                        </div>
+                        <sapi-param-setting 
+                            :target="tempCustomBtn.apiParams"
+                            :in-row="inRow"
+                            :in-list="inList"
+                            type="api" :request-type="tempCustomBtn.apiType">
+                        </sapi-param-setting>
                     </sapi-form-item>
                     <sapi-form-item v-if="tempCustomBtn.usage === 'ajax'" label="弹出提示确认框" prop="useConfirm">
                         <el-checkbox v-model="tempCustomBtn.useConfirm"></el-checkbox>
@@ -248,12 +192,12 @@
  * 配置按钮，比如列表操作区按钮、
  */
 import SapiPopover from './sapi-popover'
-import BaseCodeEditor from './base-code-editor'
+import SapiParamSetting from './sapi-param-setting'
 export default {
     inject: ['ueditor'],
     components: {
         SapiPopover,
-        BaseCodeEditor
+        SapiParamSetting
     },
     props: {
         value: {
@@ -277,6 +221,19 @@ export default {
         inRow: {
             type: Boolean,
             default: false
+        },
+        inList: {
+            type: Boolean,
+            default: true
+        },
+        // 创建btn节点的初始化属性
+        createOpts: {
+            type: Object,
+            default () {
+                return {
+                    isCustom: true
+                }
+            }
         }
     },
     data () {
@@ -290,8 +247,9 @@ export default {
                     }
                 })
             }
-            if((_this.usage === 'openPage' && rule.field === 'openUrlParams' ||
-                _this.usage === 'ajax' && rule.field === 'apiParams') && errorMsg) {
+            if((_this.tempCustomBtn.usage === 'openPage' && rule.field === 'openUrlParams' ||
+                _this.tempCustomBtn.usage === 'ajax' && rule.field === 'apiParams' ||
+                _this.tempCustomBtn.usage === 'openDialog' && rule.field === 'keysParams' && _this.tempCustomBtn.relateFormMode !== 'Add') && errorMsg) {
                 callback(new Error(errorMsg));
             } else {
                 callback();
@@ -301,27 +259,42 @@ export default {
         const checkField = (rule, value, callback) => {
             const fieldDD = {
                 'openUrl' (rule, value, callback) {
-                    if(_this.usage === 'openPage' && !value) {
+                    if(_this.tempCustomBtn.usage === 'openPage' && !value) {
                         callback(new Error('打开地址不能为空'));
                         return true
                     }
                 },
                 'apiServer'(rule, value, callback) {
-                    if(_this.usage === 'ajax' && !value) {
+                    if(_this.tempCustomBtn.usage === 'ajax' && !value) {
                         callback(new Error('api服务不能为空'));
                         return true
                     }
                 },
                 'apiUrl' (rule, value, callback) {
-                    if(_this.usage === 'ajax' && !value) {
+                    if(_this.tempCustomBtn.usage === 'ajax' && !value) {
                         callback(new Error('api地址不能为空'));
                         return true
                     }
                 },
                 'confirmMsg' (rule, value, callback) {
-                    if(_this.usage === 'ajax' && _this.useConfirm && !value) {
+                    if(_this.tempCustomBtn.usage === 'ajax' && _this.tempCustomBtn.useConfirm && !value) {
                         callback(new Error('提示确认信息不能为空'));
                         return true
+                    }
+                },
+                'appCode' (rule, value, callback) {
+                    if (_this.tempCustomBtn.usage === 'openDialog' && !value) {
+                        callback(new Error('应用编号不能为空'))
+                    }
+                },
+                'relateFormId' (rule, value, callback) {
+                    if (_this.tempCustomBtn.usage === 'openDialog' && !value) {
+                        callback(new Error('关联表单id不能为空'))
+                    }
+                },
+                'formConfirm' (rule, value, callback) {
+                    if (_this.tempCustomBtn.usage === 'openDialog' && _this.tempCustomBtn.relateFormMode !== 'View' && !value) {
+                        callback(new Error('表单回调方法不能为空'))
                     }
                 }
             }
@@ -336,7 +309,7 @@ export default {
         return {
             usageOptions: [
                 { label: '跳转页面', value: 'openPage' },
-                // { label: '弹出表单', value: 'openDialog' }, // 可支持
+                { label: '弹出表单', value: 'openDialog' }, // 可支持
                 { label: '异步请求', value: 'ajax' },
                 { label: '自定义方法', value: 'custom' }
             ],
@@ -346,20 +319,20 @@ export default {
                 { label: 'put', value: 'put' },
                 { label: 'delete', value: 'delete' },
             ],
-            paramType: [
-                { label: 'query', value: 'query' },
-                { label: 'path', value: 'path' }
-            ],
-            paramValueSource: [
-                { label: '常量', value: 'const' },
-                { label: 'url参数', value: 'urlParam' },
-                { label: '关联过滤字段', value: 'filterField' },
-                { label: '绑定data属性', value: 'dataProp' }
+            modeValueOptions: [
+                {value: 'Add', label: '表单新增'},
+                {value: 'Edit', label: '表单修改'},
+                {value: 'Adjust', label: '表单调整'},
+                {value: 'View', label: '表单查看'}
             ],
             btnTypes: [
                 { label: '默认', value: '' },
                 { label: '主要按钮', value: 'primary' },
                 { label: '危险按钮', value: 'danger' },
+            ],
+            formSubmitTypes: [
+                { label: '异步提交', value: 'ajax' },
+                { label: '回调返回', value: 'callback' }
             ],
             visible: false,
             tempCustomBtn: this.ueditor.preview.Types['btn'].create({
@@ -373,7 +346,11 @@ export default {
                 apiServer: {required: true, validator: checkField, trigger: ['blur']},
                 apiUrl: {required: true, validator: checkField, trigger: ['blur']},
                 apiParams: {required: true, validator: checkParams},
-                confirmMsg: {required: true, validator: checkField, trigger: ['blur']}
+                confirmMsg: {required: true, validator: checkField, trigger: ['blur']},
+                appCode: {required: true, validator: checkField, trigger: ['blur']},
+                relateFormId: {required: true, validator: checkField, trigger: ['blur']},
+                keysParams: {required: true, validator: checkParams},
+                formConfirm: {required: true, validator: checkField}
             }
         }
     },
@@ -385,18 +362,6 @@ export default {
             })
 
             return rst
-        },
-        operParamValueSource () {
-            const source = this.paramValueSource.slice(0)
-            source.push({ label: '数据行属性', value: 'rowProp' })
-
-            return source
-        },
-        requestParamType () {
-            const source = this.paramType.slice(0)
-            source.push({label: 'body', value: 'body'})
-
-            return source
         }
     },
     watch: {
@@ -409,6 +374,8 @@ export default {
 
                 if (this.visible) {
                     this.reSet()
+                } else {
+                    this.vnode = null
                 }
             },
             immediate: true
@@ -416,36 +383,13 @@ export default {
     },
     methods: {
         reSet () {
+            this.$refs.customBtn && this.$refs.customBtn.resetFields()
+            console.log(this.vnode)
             if (this.vnode) {
                 this.tempCustomBtn = JSON.parse(JSON.stringify(this.vnode))
             } else {
-                this.tempCustomBtn = this.ueditor.preview.Types['btn'].create({
-                    isCuston: true
-                })
+                this.tempCustomBtn = this.ueditor.preview.Types['btn'].create(this.createOpts)
             }
-        },
-        deleteParam (prop, index) {
-            this.tempCustomBtn[prop].splice(index, 1)
-        },
-        addParam (prop) {
-            this.tempCustomBtn[prop].push({
-                guid: this.$utils.guid(8),
-                paramId: '',
-                paramType: 'query',
-                paramValueSource: 'filterField',
-                paramValue: '',
-                parentGuid: ''
-            })
-        },
-        addObjectParam (prop, index, parentGuid) {
-            this.tempCustomBtn[prop].splice(index + 1, 0, {
-                guid: this.$utils.guid(8),
-                paramId: '',
-                paramType: 'bodyProp',
-                paramValueSource: 'const',
-                paramValue: '',
-                parentGuid: parentGuid
-            })
         },
         saveCustomBtn () {
             this.$refs.customBtn.validate((valid) => {
@@ -454,40 +398,12 @@ export default {
                         Object.assign(this.vnode, this.tempCustomBtn)
                         this.ueditor.addRecord()
                     } else {
-                        this.$emit('confirm', 'set-operation-btn', this.tempCustomBtn)
+                        this.$emit('confirm', 'set-operation-btn', Object.assign({}, this.tempCustomBtn))
                     }
 
                     this.visible = false
                 }
             })
-        },
-        getApiParamValueSource (rowData) {
-            let source = this.inRow ? this.operParamValueSource : this.paramValueSource
-            if (rowData.paramType === 'body') {
-                source = source.slice(0)
-                source.push({label:'自定义对象', value: 'customObj'})
-            }
-            
-            return source
-        },
-        apiParamTypeChange (rowData, index) {
-            if (rowData.paramType !== 'body') {
-                if (rowData.paramValueSource === 'customObj') {
-                    rowData.paramValueSource = 'const'
-                }
-                while(this.tempCustomBtn.apiParams[index + 1] &&
-                    this.tempCustomBtn.apiParams[index + 1].parentGuid === rowData.guid) {
-                    this.tempCustomBtn.apiParams.splice(index + 1, 1)
-                }
-            }
-        },
-        apiParamValueSourceChange (rowData, index) {
-            if (rowData.paramType !== 'customObj') {
-                while(this.tempCustomBtn.apiParams[index + 1] &&
-                    this.tempCustomBtn.apiParams[index + 1].parentGuid === rowData.guid) {
-                    this.tempCustomBtn.apiParams.splice(index + 1, 1)
-                }
-            }
         }
     }
 }
@@ -497,14 +413,5 @@ export default {
 .custom-fun-code{
     height: 60px;
     width: 100%;
-}
-.body-prop-param-wrap{
-    display:flex;
-
-    .body-prop-prefix{
-        white-space:nowrap;
-        width: 25px;
-        line-height: 36px;
-    }
 }
 </style>
