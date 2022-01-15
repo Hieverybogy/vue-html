@@ -52,7 +52,7 @@
     "element-ui": "^2.4.11",
     "hls.js": "^0.8.9",
     "html2canvas": "^1.0.0-rc.1",
-    "shelljs": "^0.8.1",
+    "shelljs": "^0.8.5",
     "vue-dplayer": "^0.0.10",
     "vue-i18n": "^8.5.0",
     "vue-router": "^3.1.3",
